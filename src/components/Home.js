@@ -21,10 +21,12 @@ export default class Home extends Component {
                 this.setState({
                     posts: res.data.existingPosts
                 })
-
-                console.log(this.state.posts)
             }
         })
+    }
+
+    deletePost(id){
+        console.log(id)
     }
 
     render() {
@@ -45,7 +47,7 @@ export default class Home extends Component {
                     <tbody>
                         {
                             this.state.posts.map((post, index) => (
-                                <tr>
+                                <tr key={index}> 
                                     <th scope='row'>{index + 1}</th>
                                     <td><a href={`post/${post._id}`} style={{ textDecoration: 'none' }}>{post.topic}</a></td>
                                     <td>{post.description}</td>
@@ -55,9 +57,9 @@ export default class Home extends Component {
                                             <i className="fas fa-edit"></i>&nbsp;Edit
                                         </a>
                                         &nbsp;
-                                        <a className="btn btn-danger">
+                                        <button className="btn btn-danger" onClick={this.deletePost(post._id)}>
                                             <i className="far fa-trash-alt"></i>&nbsp;Delete
-                                        </a>
+                                        </button>
                                     </td>
                                 </tr>
                             ))
