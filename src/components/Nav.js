@@ -5,7 +5,7 @@ export default class Nav extends Component {
     return (
       <div className='mb-5'>
         <nav className="navbar navbar-expand-lg navbar-light bg-light ps-3">
-          <a className="navbar-brand" href="/">MERN App</a>
+          <a className="navbar-brand" href="/">First MERN App</a>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
